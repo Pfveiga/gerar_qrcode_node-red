@@ -1,0 +1,118 @@
+[
+    {
+        "id": "f49fe7d64729757d",
+        "type": "qrcode-generator",
+        "z": "5cce23ee.3716bc",
+        "name": "",
+        "qrtype": "text2qr",
+        "text2qrText": "",
+        "ssid": "",
+        "hiddenssid": false,
+        "wifitype": "",
+        "phonenum": "",
+        "smsphonenum": "",
+        "smstext": "",
+        "mailto": "",
+        "mailsubject": "",
+        "mailbody": "",
+        "latitude": "",
+        "longitude": "",
+        "colorlight": "#ffffff",
+        "colordark": "#000000",
+        "printstatus": false,
+        "x": 270,
+        "y": 360,
+        "wires": [
+            [
+                "799f08a2666b897d",
+                "b03ad52ffac204bb"
+            ]
+        ]
+    },
+    {
+        "id": "2d0ff64f70b7bc63",
+        "type": "inject",
+        "z": "5cce23ee.3716bc",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "qrcodeinput",
+                "v": "https://ec2-44-234-253-241.us-west-2.compute.amazonaws.com/",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 360,
+        "wires": [
+            [
+                "f49fe7d64729757d"
+            ]
+        ]
+    },
+    {
+        "id": "799f08a2666b897d",
+        "type": "debug",
+        "z": "5cce23ee.3716bc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b03ad52ffac204bb",
+        "type": "ui_template",
+        "z": "5cce23ee.3716bc",
+        "group": "a3820e1c5993c36a",
+        "name": "",
+        "order": 2,
+        "width": "6",
+        "height": "6",
+        "format": "<div>\n      <img src=\"{{msg.payload}}\">\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 500,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a3820e1c5993c36a",
+        "type": "ui_group",
+        "name": "Webcam",
+        "tab": "05dd48421576fd47",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "05dd48421576fd47",
+        "type": "ui_tab",
+        "name": "Alic.IA Cam",
+        "icon": "dashboard",
+        "order": 6,
+        "disabled": false,
+        "hidden": false
+    }
+]
